@@ -1,8 +1,10 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {FaMoon, FaSun} from "react-icons/fa";
 import {Link, NavLink} from "react-router-dom";
+import AuthContext from "../../Provider/AuthContext";
 
 const Navbar = () => {
+  const {user, logout} = useContext(AuthContext);
   //! State to manage the theme
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   // Change theme when the button is clicked
@@ -19,7 +21,7 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <Link onClick={logout}>Logout</Link>
       </li>
       <li>
         <NavLink to="/login">Login</NavLink>
@@ -43,7 +45,7 @@ const Navbar = () => {
           <ul className="flex justify-center gap-4 text-sm font-semibold">
             <li>home</li>
             <li>home</li>
-            <li>home</li>
+            <li>{user?.email}</li>
           </ul>
         </div>
         <div className="">

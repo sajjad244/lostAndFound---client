@@ -2,9 +2,13 @@ import Lottie from "lottie-react";
 import registerLottie from "../../assets/lottie/register.json";
 import {useContext} from "react";
 import AuthContext from "../../Provider/AuthContext";
+import {Link, useNavigate} from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const {createNewUser} = useContext(AuthContext);
+  const {createNewUser, setUser, updateUserProfile} = useContext(AuthContext);
+  //? for navigate path
+  const navigate = useNavigate();
 
   // ? handle form submit
   const handleSubmit = (e) => {
@@ -18,25 +22,38 @@ const Register = () => {
     console.log(name, email, photoURL, password);
 
     //! Password validation regex
-    // const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-    // if (!passwordRegex.test(password)) {
-    //   alert("Password must be at least 6 characters long and contain at least one letter and one number");
-    //   return;
-    // }
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast.error(
+        "Password must have at least 6 characters, including uppercase and lowercase letters."
+      );
+      return;
+    }
 
     // ? create new user
     createNewUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user;
+        setUser(user);
+        // update user profile
+        updateUserProfile({displayName: name, photoURL: photoURL})
+          .then(() => {
+            navigate("/");
+          })
+          .catch((err) => {
+            alert(err.code, "something went wrong");
+          });
+        toast.success("Thank you! For your Registration");
       })
       .catch((error) => {
         console.log(error.message);
       });
+    form.reset();
   };
 
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-base-200 ">
         <div className="hero-content flex-col lg:flex-row-reverse gap-20">
           <div className="text-center lg:text-left ">
             <Lottie className="w-64" animationData={registerLottie}></Lottie>
@@ -101,6 +118,15 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            {/* Login */}
+            <div className="text-center mb-10">
+              <p className="text-sm text-gray-600">
+                Already have an account?{" "}
+                <Link to="/login" className=" hover:underline font-medium">
+                  Login here
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>

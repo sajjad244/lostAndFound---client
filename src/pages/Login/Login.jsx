@@ -1,7 +1,17 @@
 import Lottie from "lottie-react";
 import loginLottie from "../../assets/lottie/login.json";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import {FaGoogle} from "react-icons/fa";
+import AuthContext from "../../Provider/AuthContext";
+import {useContext} from "react";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const {loginUser, setUser, googleLogIn} = useContext(AuthContext);
+  //! for navigate path
+  const location = useLocation();
+  const navigate = useNavigate();
+
   // ? handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -9,7 +19,31 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.table({email, password});
+    loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate(location?.state || "/");
+        toast.success(`Welcome successfully logged in.`);
+      })
+      .catch((error) => console.error(error));
+
+    form.reset();
+  };
+
+  // ! google login
+
+  const handleGoogleLogin = () => {
+    googleLogIn()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate(location?.state || "/");
+        toast.success(`Welcome successfully logged in.`);
+      })
+      .catch((err) => {
+        toast.error(`Google Login Failed: ${err.message}`);
+      });
   };
   return (
     <div>
@@ -48,16 +82,30 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
-              <div className="form-control mt-6">
+              {/* Google Login */}
+              <div className="my-2">
+                <button
+                  onClick={handleGoogleLogin}
+                  type="button"
+                  className="w-full bg-green-500 hover:bg-red-600 text-white py-2 rounded-md focus:outline-none focus:ring focus:ring-red-300"
+                >
+                  Login with Google <FaGoogle className="inline-block ml-1" />
+                </button>
+              </div>
+              <div className="form-control ">
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            {/* register */}
+            <div className="text-center mb-10">
+              <p className="text-sm text-gray-600">
+                Don’t have an account?
+                <Link to="/register" className=" hover:underline font-medium">
+                  register here
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>
