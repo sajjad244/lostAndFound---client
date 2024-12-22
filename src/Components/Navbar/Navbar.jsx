@@ -21,14 +21,15 @@ const Navbar = () => {
   //! State to manage the theme
   const links = (
     <>
+      {/* privet-routes */}
       <li>
         <NavLink to="/">Add Lost & Found Item</NavLink>
       </li>
       <li>
-        <NavLink to="/register">All Recovered Items</NavLink>
+        <NavLink to="/">All Recovered Items</NavLink>
       </li>
       <li>
-        <NavLink to="/register">Manage My Items</NavLink>
+        <NavLink to="/">Manage My Items</NavLink>
       </li>
     </>
   );
@@ -48,9 +49,7 @@ const Navbar = () => {
             </Link>
           </i>
         </div>
-
         {/*  */}
-
         <div className="">
           <ul className="flex justify-center  text-sm font-semibold">
             <li>
@@ -59,8 +58,8 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/login" className="btn btn-ghost">
-                Lost & Found
+              <NavLink to="/" className="btn btn-ghost">
+                Lost&Found
               </NavLink>
             </li>
           </ul>
