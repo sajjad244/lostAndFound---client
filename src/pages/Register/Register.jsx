@@ -53,10 +53,10 @@ const Register = () => {
 
   return (
     <div>
-      <div className="hero bg-base-200 ">
-        <div className="hero-content flex-col lg:flex-row-reverse gap-20">
-          <div className="text-center lg:text-left ">
-            <Lottie className="w-64" animationData={registerLottie}></Lottie>
+      <div className="hero  ">
+        <div className="hero-content flex-col lg:flex-row-reverse md:gap-20">
+          <div className="grid items-center ">
+            <Lottie className="" animationData={registerLottie}></Lottie>
           </div>
           {/*  */}
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

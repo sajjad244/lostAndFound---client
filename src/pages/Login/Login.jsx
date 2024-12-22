@@ -26,7 +26,10 @@ const Login = () => {
         navigate(location?.state || "/");
         toast.success(`Welcome successfully logged in.`);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.log(error.message);
+        toast.error(` Don’t have an account? Register please _!!`);
+      });
 
     form.reset();
   };
@@ -47,7 +50,7 @@ const Login = () => {
   };
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero ">
         <div className="hero-content flex-col lg:flex-row-reverse ">
           <div className="text-center lg:text-left ">
             <Lottie
