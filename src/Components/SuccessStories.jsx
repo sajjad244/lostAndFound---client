@@ -1,3 +1,5 @@
+import {motion} from "framer-motion";
+
 const SuccessStories = () => {
   const stories = [
     {
@@ -5,7 +7,8 @@ const SuccessStories = () => {
       title: "Lost Wallet Found",
       description:
         "Thanks to this platform, I was able to find my lost wallet within two days!",
-      image: "https://via.placeholder.com/150",
+      image:
+        "https://i.ibb.co.com/VW3n1F8/dream-about-wallet-lost-and-found.webp",
       user: "John Doe",
     },
     {
@@ -13,7 +16,7 @@ const SuccessStories = () => {
       title: "Reunited with Pet",
       description:
         "This site helped me locate my missing cat. Forever grateful!",
-      image: "https://via.placeholder.com/150",
+      image: "https://i.ibb.co.com/GV80pQ4/lost-cat.jpg",
       user: "Jane Smith",
     },
   ];
@@ -23,16 +26,30 @@ const SuccessStories = () => {
       <h2 className="text-2xl font-bold text-center mb-6">Success Stories</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {stories.map((story) => (
-          <div key={story.id} className="card  shadow-md p-4 rounded-md">
-            <img
+          <motion.div
+            key={story.id}
+            className="card shadow-md p-4 rounded-md"
+            initial={{opacity: 0, y: 50}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.5}}
+          >
+            <motion.img
               src={story.image}
               alt={story.title}
               className="w-full h-40 object-cover rounded-md mb-4"
+              animate={{
+                x: ["0%", "50%", "0%"], // Moves the image left to right and back
+              }}
+              transition={{
+                duration: 10, // Total duration of the loop
+                ease: "circIn",
+                loop: Infinity, // Infinite loop
+              }}
             />
             <h3 className="text-xl font-semibold mb-2">{story.title}</h3>
             <p className="text-gray-600 mb-2">{story.description}</p>
             <p className="text-sm text-gray-500">- {story.user}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
