@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import {Link} from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types
 const Card = ({item}) => {
   const {
     PostType,
@@ -15,7 +16,7 @@ const Card = ({item}) => {
   } = item;
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+    <div className="card  bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
       <figure>
         <img
           src={imageURL}
@@ -24,7 +25,7 @@ const Card = ({item}) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-lg font-semibold text-gray-800">
+        <h2 className="card-title text-lg font-semibold text-gray-700">
           {title}
         </h2>
         <p className="text-sm text-gray-600">

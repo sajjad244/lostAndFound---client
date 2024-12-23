@@ -51,21 +51,22 @@ const Navbar = () => {
           </i>
         </div>
         {/*  */}
-        <div className="">
-          <ul className="flex justify-center  text-sm font-semibold">
-            <li>
-              <NavLink to="/" className="btn btn-ghost">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/allItems" className="btn btn-ghost">
-                All Lost&Found
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <div className="">
+
+        <div>
+          <div className="mr-4">
+            <ul className="flex justify-center  text-sm font-semibold">
+              <li>
+                <NavLink to="/" className="btn btn-ghost font-bold">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/allItems" className="btn btn-ghost font-bold">
+                  All Lost&Found
+                </NavLink>
+              </li>
+            </ul>
+          </div>
           {/*  */}
           {user ? (
             <div className="flex gap-4 justify-center items-center">

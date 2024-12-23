@@ -27,18 +27,14 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/allItems",
+        element: <AllLostFound></AllLostFound>,
+      },
+      {
         path: "/addLostAndFoundItem",
         element: (
           <PrivetRoutes>
             <AddPostForm></AddPostForm>
-          </PrivetRoutes>
-        ),
-      },
-      {
-        path: "/allItems",
-        element: (
-          <PrivetRoutes>
-            <AllLostFound></AllLostFound>
           </PrivetRoutes>
         ),
       },
