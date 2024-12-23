@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       {/* privet-routes */}
       <li>
-        <NavLink to="/">Add Lost & Found Item</NavLink>
+        <NavLink to="/addLostAndFoundItem">Add Lost & Found Item</NavLink>
       </li>
       <li>
         <NavLink to="/">All Recovered Items</NavLink>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm font-semibold dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow space-y-2"
+                  className="menu menu-sm font-semibold dropdown-content bg-base-100 rounded-box z-[20] mt-3 w-40 p-2 shadow space-y-2"
                 >
                   {links}
                 </ul>
