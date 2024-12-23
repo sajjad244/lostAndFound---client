@@ -59,8 +59,8 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className="btn btn-ghost">
-                Lost&Found
+              <NavLink to="/allItems" className="btn btn-ghost">
+                All Lost&Found
               </NavLink>
             </li>
           </ul>

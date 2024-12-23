@@ -5,6 +5,8 @@ import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AddPostForm from "../pages/AddPostForm";
+import AllLostFound from "../pages/AllPosts/AllLostFound";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/addLostAndFoundItem",
-        element: <AddPostForm></AddPostForm>,
+        element: (
+          <PrivetRoutes>
+            <AddPostForm></AddPostForm>
+          </PrivetRoutes>
+        ),
+      },
+      {
+        path: "/allItems",
+        element: (
+          <PrivetRoutes>
+            <AllLostFound></AllLostFound>
+          </PrivetRoutes>
+        ),
       },
     ],
   },

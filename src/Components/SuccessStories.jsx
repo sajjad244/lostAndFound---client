@@ -38,12 +38,12 @@ const SuccessStories = () => {
               alt={story.title}
               className="w-full h-40 object-cover rounded-md mb-4"
               animate={{
-                x: ["0%", "50%", "0%"], // Moves the image left to right and back
+                x: ["0%", "50%", "0%"],
               }}
               transition={{
-                duration: 10, // Total duration of the loop
+                duration: 10,
                 ease: "circIn",
-                loop: Infinity, // Infinite loop
+                loop: Infinity,
               }}
             />
             <h3 className="text-xl font-semibold mb-2">{story.title}</h3>

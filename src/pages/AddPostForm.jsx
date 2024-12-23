@@ -2,12 +2,13 @@ import {useContext, useState} from "react";
 import AuthContext from "../Provider/AuthContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
 
 const AddPostForm = () => {
   const {user} = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission
     const form = e.target;
@@ -34,7 +35,15 @@ const AddPostForm = () => {
       date,
       userPhoto,
     };
-    console.log({formData});
+
+    //? make a post req {using axios for fetch}
+
+    const {data} = await axios.post(
+      `${import.meta.env.VITE_API_URL}/addItems`,
+      formData
+    );
+
+    console.log(data);
   };
 
   return (
