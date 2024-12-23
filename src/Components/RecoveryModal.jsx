@@ -68,7 +68,10 @@ const RecoveryModal = ({
 
           {/* Buttons */}
           <div className="flex justify-end">
-            <button className="btn btn-success mr-2" onClick={onSubmit}>
+            <button
+              className="btn btn-success mr-2 text-white"
+              onClick={onSubmit}
+            >
               Submit
             </button>
             <button className="btn btn-outline" onClick={onClose}>

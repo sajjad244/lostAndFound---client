@@ -29,6 +29,8 @@ const LostFoundDetails = () => {
     };
 
     console.log("Recovery Info Submitted:", recoveredInfo);
+    // TODO: Send this data to the server from here
+
     //
     setIsModalOpen(false);
   };
