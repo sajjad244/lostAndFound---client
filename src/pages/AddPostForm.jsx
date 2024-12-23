@@ -3,6 +3,7 @@ import AuthContext from "../Provider/AuthContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddPostForm = () => {
   const {user} = useContext(AuthContext);
@@ -42,8 +43,10 @@ const AddPostForm = () => {
       `${import.meta.env.VITE_API_URL}/addItems`,
       formData
     );
-
-    console.log(data);
+    if (data) {
+      toast.success("Post Added Successfully");
+      form.reset();
+    }
   };
 
   return (

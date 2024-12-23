@@ -13,7 +13,7 @@ const Card = ({item}) => {
     name,
     title,
     _id,
-  } = item;
+  } = item || {};
 
   return (
     <div className="card  bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
