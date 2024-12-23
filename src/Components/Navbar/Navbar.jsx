@@ -31,6 +31,7 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Manage My Items</NavLink>
       </li>
+      <button>{user?.displayName}</button>
     </>
   );
   return (
@@ -74,11 +75,23 @@ const Navbar = () => {
                   role="button"
                   className="btn btn-ghost btn-circle avatar"
                 >
-                  <div className="w-10 rounded-full">
+                  <div className="w-10 rounded-full relative group">
                     {user?.email ? (
-                      <img src={user?.photoURL} alt="" />
+                      <div>
+                        <img
+                          src={user?.photoURL}
+                          alt="User"
+                          className="rounded-full"
+                        />
+                        <span
+                          className="absolute left-1/2 transform -translate-x-1/2  bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                          style={{visibility: "visible", display: "block"}}
+                        >
+                          {user?.displayName || "User Name"}
+                        </span>
+                      </div>
                     ) : (
-                      <FaUser></FaUser>
+                      <FaUser className="text-2xl cursor-pointer" />
                     )}
                   </div>
                 </div>
