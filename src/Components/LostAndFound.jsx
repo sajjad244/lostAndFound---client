@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 
 const LostAndFound = () => {
   const [items, setItems] = useState([]);
+  //   sort by date
+  const sortedItems = items.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const fetchAllItems = async () => {
     const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/allItems`);
@@ -31,12 +33,12 @@ const LostAndFound = () => {
         </p>
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 rounded-md my-10">
-        {items.slice(0, 6).map((item) => (
+        {sortedItems.slice(0, 6).map((item) => (
           <Card item={item} key={item._id}></Card>
         ))}
       </div>
       <div className="my-5 px-8">
-        <Link to="/allItems" className="btn">
+        <Link to="/allItems" className="btn text-orange-500">
           See all
         </Link>
       </div>
