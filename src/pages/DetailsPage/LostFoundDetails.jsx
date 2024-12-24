@@ -8,7 +8,8 @@ const LostFoundDetails = () => {
   const {id} = useParams();
   const {user} = useContext(AuthContext);
   const item = data.find((item) => item._id == id);
-  const {PostType, title, description, imageURL, location, date} = item || {};
+  const {PostType, title, description, imageURL, location, date, category} =
+    item || {};
 
   // modal and form state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,6 +48,7 @@ const LostFoundDetails = () => {
         <p className="badge text-sm font-serif bg-purple-600">{PostType}</p>
       </div>
       <p className="text-gray-600 mb-4">{description}</p>
+      <p className="text-gray-600 mb-4">Category: {category}</p>
       <p className="text-sm text-gray-500">Location: {location}</p>
       <p className="text-sm text-gray-500">Date: {date}</p>
 

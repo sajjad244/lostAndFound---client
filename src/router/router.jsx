@@ -9,6 +9,7 @@ import AllLostFound from "../pages/AllPosts/AllLostFound";
 import PrivetRoutes from "./PrivetRoutes";
 import LostFoundDetails from "../pages/DetailsPage/LostFoundDetails";
 import MyItemsPage from "../pages/MyItems/MyItemsPage";
+import UpdatePage from "../pages/Update/UpdatePage";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,16 @@ const router = createBrowserRouter([
             <MyItemsPage></MyItemsPage>
           </PrivetRoutes>
         ),
+      },
+      {
+        path: "/updatePost/:id",
+        element: (
+          <PrivetRoutes>
+            <UpdatePage></UpdatePage>
+          </PrivetRoutes>
+        ),
+        loader: ({params}) =>
+          fetch(`${import.meta.env.VITE_API_URL}/update/${params.id}`),
       },
     ],
   },

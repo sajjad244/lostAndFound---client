@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import AuthContext from "../../Provider/AuthContext";
 import {FaArrowUpFromGroundWater, FaDeleteLeft} from "react-icons/fa6";
 import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 const MyItemsPage = () => {
   const {user} = useContext(AuthContext);
@@ -82,12 +83,25 @@ const MyItemsPage = () => {
                 <tr key={post._id} className="hover:bg-gray-50">
                   <td className="py-2 px-4">{index + 1}</td>
                   <td className="py-2 px-4">{post.title}</td>
-                  <td className="py-2 px-4">{post.PostType}</td>
+
+                  <td
+                    className={`py-2 px-4 badge mt-2 font-semibold rounded-full ${
+                      post.PostType === "Found"
+                        ? "text-green-500 bg-green-200 "
+                        : "text-red-500 bg-red-200"
+                    }`}
+                  >
+                    {post.PostType} item
+                  </td>
+
                   <td className="py-2 px-4">{post.location}</td>
                   <td className="py-2 px-4">
-                    <button className="btn btn-xs btn-info mr-2">
+                    <Link
+                      to={`/updatePost/${post._id}`}
+                      className="btn btn-xs btn-info mr-2"
+                    >
                       <FaArrowUpFromGroundWater></FaArrowUpFromGroundWater>
-                    </button>
+                    </Link>
                     <button
                       onClick={() => handleDelete(post._id)}
                       className="btn btn-xs btn-error"
