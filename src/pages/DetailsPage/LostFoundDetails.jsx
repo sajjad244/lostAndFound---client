@@ -1,7 +1,9 @@
 import {useContext, useState} from "react";
-import {useLoaderData, useParams} from "react-router-dom";
+import {useLoaderData, useNavigate, useParams} from "react-router-dom";
 import AuthContext from "../../Provider/AuthContext";
 import RecoveryModal from "../../Components/RecoveryModal";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const LostFoundDetails = () => {
   const data = useLoaderData();
@@ -10,6 +12,7 @@ const LostFoundDetails = () => {
   const item = data.find((item) => item._id == id);
   const {PostType, title, description, imageURL, location, date, category} =
     item || {};
+  const navigate = useNavigate();
 
   // modal and form state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,7 +20,7 @@ const LostFoundDetails = () => {
   const [recoveredDate, setRecoveredDate] = useState(new Date());
 
   // Modal Submit Handler
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const recoveredInfo = {
       item,
       recoveredLocation,
@@ -29,8 +32,16 @@ const LostFoundDetails = () => {
       },
     };
 
-    console.log("Recovery Info Submitted:", recoveredInfo);
-    // TODO: Send this data to the server from here ///
+    //! make a post req {using axios for fetch} Send this data to the server from here ///
+
+    const {data} = await axios.post(
+      `${import.meta.env.VITE_API_URL}/addRecovered`,
+      recoveredInfo
+    );
+    if (data) {
+      toast.success("Post Added Successfully");
+      navigate("/");
+    }
 
     //
     setIsModalOpen(false);
@@ -60,7 +71,7 @@ const LostFoundDetails = () => {
         {PostType === "Lost" ? "Found This!" : "This is Mine!"}
       </button>
 
-      {/* Recovery Modal */}
+      {/*  Modal */}
       <RecoveryModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

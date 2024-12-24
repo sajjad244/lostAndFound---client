@@ -2,6 +2,8 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// ! {modal using in details page} !//
+
 const RecoveryModal = ({
   isOpen,
   onClose,
@@ -43,10 +45,9 @@ const RecoveryModal = ({
               Recovered Date
             </label>
             <DatePicker
+              className="input input-bordered w-full"
               selected={recoveredDate}
               onChange={(date) => setRecoveredDate(date)}
-              className="input input-bordered w-full"
-              dateFormat="dd/MM/yyyy"
             />
           </div>
 
@@ -55,7 +56,7 @@ const RecoveryModal = ({
             <label className="block text-sm font-bold mb-2">Recovered By</label>
             <div className="flex items-center gap-4">
               <img
-                src={user?.photoURL || "https://via.placeholder.com/50"}
+                src={user?.photoURL}
                 alt="User"
                 className="w-12 h-12 rounded-full"
               />
