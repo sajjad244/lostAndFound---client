@@ -8,6 +8,7 @@ import AddPostForm from "../pages/AddPostForm";
 import AllLostFound from "../pages/AllPosts/AllLostFound";
 import PrivetRoutes from "./PrivetRoutes";
 import LostFoundDetails from "../pages/DetailsPage/LostFoundDetails";
+import MyItemsPage from "../pages/MyItems/MyItemsPage";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: () => fetch(`${import.meta.env.VITE_API_URL}/allItems`),
+      },
+      {
+        path: "/myItems",
+        element: (
+          <PrivetRoutes>
+            <MyItemsPage></MyItemsPage>
+          </PrivetRoutes>
+        ),
       },
     ],
   },

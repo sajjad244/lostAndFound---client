@@ -26,12 +26,12 @@ const Navbar = () => {
         <NavLink to="/addLostAndFoundItem">Add Lost & Found Item</NavLink>
       </li>
       <li>
-        <NavLink to="/">All Recovered Items</NavLink>
+        <NavLink to="/myItems">My Items</NavLink>
       </li>
       <li>
-        <NavLink to="/">Manage My Items</NavLink>
+        <NavLink to="/">Recovered Items</NavLink>
       </li>
-      <button>{user?.displayName}</button>
+      {/* <p className="p-2">{user?.displayName}</p> */}
     </>
   );
   return (
