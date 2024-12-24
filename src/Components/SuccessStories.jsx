@@ -22,8 +22,10 @@ const SuccessStories = () => {
   ];
 
   return (
-    <section className="success-stories py-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Success Stories</h2>
+    <section className="success-stories py-8 my-10">
+      <h2 className="text-3xl font-bold text-center mb-10 bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
+        Success Stories
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {stories.map((story) => (
           <motion.div

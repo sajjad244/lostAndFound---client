@@ -57,12 +57,18 @@ const Navbar = () => {
           <div className="mr-4">
             <ul className="flex justify-center  text-sm font-semibold">
               <li>
-                <NavLink to="/" className="btn btn-ghost font-bold">
+                <NavLink
+                  to="/"
+                  className="btn btn-ghost font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                >
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/allItems" className="btn btn-ghost font-bold">
+                <NavLink
+                  to="/allItems"
+                  className="btn btn-ghost font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                >
                   All Lost&Found
                 </NavLink>
               </li>
@@ -105,13 +111,19 @@ const Navbar = () => {
                 </ul>
               </div>
               <div>
-                <Link onClick={logout} className="btn btn-ghost font-bold">
+                <Link
+                  onClick={logout}
+                  className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                >
                   Logout
                 </Link>
               </div>
             </div>
           ) : (
-            <Link to="/login" className="btn btn-ghost font-bold">
+            <Link
+              to="/login"
+              className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+            >
               Login
             </Link>
           )}

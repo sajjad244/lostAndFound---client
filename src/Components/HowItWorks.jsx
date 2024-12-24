@@ -22,8 +22,10 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="how-it-works py-8 ">
-      <h2 className="text-2xl font-bold text-center mb-6">How It Works</h2>
+    <section className="how-it-works py-8 mb-16">
+      <h2 className="text-2xl font-bold text-center mb-10 bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
+        How It Works
+      </h2>
       <div className="flex flex-col md:flex-row justify-center gap-6">
         {steps.map((step) => (
           <div
