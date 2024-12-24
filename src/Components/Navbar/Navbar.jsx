@@ -39,16 +39,17 @@ const Navbar = () => {
       <div className="navbar bg-base-100 flex justify-between">
         {/*  */}
         <div className="flex items-center">
-          <i className="text-3xl text-teal-500 font-bold">
+          <div className="text-3xl text-teal-500 font-bold">
             <Link
               to="/"
               className="btn btn-ghost text-xl font-bold flex items-center"
             >
-              <span className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
-                WhereIsIt
-              </span>
+              <p className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
+                <span>Where</span>
+                <span className="font-normal italic">IsIt</span>
+              </p>
             </Link>
-          </i>
+          </div>
         </div>
         {/*  */}
 

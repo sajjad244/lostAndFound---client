@@ -20,7 +20,7 @@ const LostFoundDetails = () => {
     const recoveredInfo = {
       item,
       recoveredLocation,
-      recoveredDate,
+      recoveredDate: recoveredDate.toISOString().slice(0, 10),
       recoveredBy: {
         name: user?.displayName,
         email: user?.email,
@@ -29,7 +29,7 @@ const LostFoundDetails = () => {
     };
 
     console.log("Recovery Info Submitted:", recoveredInfo);
-    // TODO: Send this data to the server from here
+    // TODO: Send this data to the server from here ///
 
     //
     setIsModalOpen(false);
