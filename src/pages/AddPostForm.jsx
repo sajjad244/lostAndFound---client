@@ -37,6 +37,7 @@ const AddPostForm = () => {
       name,
       date,
       userPhoto,
+      status: "Not recover",
     };
 
     //? make a post req {using axios for fetch}

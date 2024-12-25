@@ -13,6 +13,7 @@ const Card = ({item}) => {
     name,
     title,
     _id,
+    status,
   } = item || {};
 
   return (
@@ -25,9 +26,13 @@ const Card = ({item}) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-lg font-semibold text-gray-700">
-          {title}
-        </h2>
+        <div className="flex justify-between items-center">
+          <h2 className="card-title text-lg font-semibold text-gray-700">
+            {title}
+          </h2>
+        </div>
+        <p className="badge text-sm font-serif  bg-orange-600">{status}</p>
+
         <p className="text-sm text-gray-600">
           <span className="font-medium">Category:</span> {PostType}
         </p>

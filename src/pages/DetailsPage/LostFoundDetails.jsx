@@ -10,8 +10,17 @@ const LostFoundDetails = () => {
   const {id} = useParams();
   const {user} = useContext(AuthContext);
   const item = data.find((item) => item._id == id);
-  const {PostType, title, description, imageURL, location, date, category} =
-    item || {};
+  const {
+    PostType,
+    title,
+    description,
+    imageURL,
+    location,
+    date,
+    category,
+    status,
+    email,
+  } = item || {};
   const navigate = useNavigate();
 
   // modal and form state
@@ -31,6 +40,13 @@ const LostFoundDetails = () => {
         photoURL: user?.photoURL,
       },
     };
+
+    // ? conditional Statement for better UX
+    if (user.email === item.email)
+      return toast.error("You can't recover your own post");
+    // ? conditional Statement for better UX
+    if (status === "Recovered")
+      return toast.error("This item is already recovered");
 
     //! make a post req {using axios for fetch} Send this data to the server from here ///
 
@@ -56,15 +72,22 @@ const LostFoundDetails = () => {
       />
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold mb-2">{title}</h2>
-        <p className="badge text-sm font-serif bg-purple-600">{PostType}</p>
+        <div>
+          <p className="badge text-sm font-serif bg-purple-600">{PostType}</p>
+          <p className="badge text-sm font-serif ml-5 bg-orange-600">
+            {status}
+          </p>
+        </div>
       </div>
       <p className="text-gray-600 mb-4">{description}</p>
       <p className="text-gray-600 mb-4">Category: {category}</p>
+      <p className="text-gray-600 mb-4">Email: {email}</p>
       <p className="text-sm text-gray-500">Location: {location}</p>
       <p className="text-sm text-gray-500">Date: {date}</p>
 
-      {/* conditional button */}
+      {/* conditional button & disabled with condition */}
       <button
+        disabled={status === "Recovered"}
         className="btn btn-primary mt-4"
         onClick={() => setIsModalOpen(true)}
       >
