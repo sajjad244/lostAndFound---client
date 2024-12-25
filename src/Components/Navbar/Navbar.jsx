@@ -76,12 +76,14 @@ const Navbar = () => {
           </div>
           {/*  */}
           {user ? (
-            <div className="flex gap-4 justify-center items-center">
-              <div className="dropdown dropdown-end">
+            <div className="flex gap-4 justify-center items-center ">
+              {/*  */}
+              <div className="dropdown dropdown-end tooltip-bottom    ">
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost btn-circle avatar"
+                  className="btn btn-ghost btn-circle avatar tooltip tooltip-left"
+                  data-tip={user.displayName}
                 >
                   <div className="w-10 rounded-full relative group">
                     {user?.email ? (
@@ -104,6 +106,10 @@ const Navbar = () => {
                   {links}
                 </ul>
               </div>
+
+              {/*  */}
+              {/*  */}
+              {/*  */}
               <div>
                 <Link
                   onClick={logout}

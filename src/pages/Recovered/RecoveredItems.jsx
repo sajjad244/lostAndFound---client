@@ -31,7 +31,7 @@ const RecoveredItems = () => {
       <h1 className="text-2xl font-bold mb-4 bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
         All Recovered
       </h1>
-
+      {/* conditional data showing */}
       {items.length === 0 ? (
         <p className="text-center text-gray-500">
           No RecoveredDate found. Start by adding a RecoveredDate!
