@@ -33,6 +33,7 @@ const LostFoundDetails = () => {
     const recoveredInfo = {
       item,
       recoveredLocation,
+      email: user?.email,
       recoveredDate: recoveredDate.toISOString().slice(0, 10),
       recoveredBy: {
         name: user?.displayName,

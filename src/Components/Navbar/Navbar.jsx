@@ -29,7 +29,7 @@ const Navbar = () => {
         <NavLink to="/myItems">My Items</NavLink>
       </li>
       <li>
-        <NavLink to="/">Recovered Items</NavLink>
+        <NavLink to="/recoveredItems">Recovered Items</NavLink>
       </li>
       {/* <p className="p-2">{user?.displayName}</p> */}
     </>

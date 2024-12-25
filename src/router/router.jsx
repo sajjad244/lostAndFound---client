@@ -10,6 +10,7 @@ import PrivetRoutes from "./PrivetRoutes";
 import LostFoundDetails from "../pages/DetailsPage/LostFoundDetails";
 import MyItemsPage from "../pages/MyItems/MyItemsPage";
 import UpdatePage from "../pages/Update/UpdatePage";
+import RecoveredItems from "../pages/Recovered/RecoveredItems";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,14 @@ const router = createBrowserRouter([
         ),
         loader: ({params}) =>
           fetch(`${import.meta.env.VITE_API_URL}/update/${params.id}`),
+      },
+      {
+        path: "/recoveredItems",
+        element: (
+          <PrivetRoutes>
+            <RecoveredItems></RecoveredItems>
+          </PrivetRoutes>
+        ),
       },
     ],
   },
