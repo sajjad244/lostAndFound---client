@@ -1,20 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {useContext, useEffect, useState} from "react";
 import AuthContext from "../../Provider/AuthContext";
-import axios from "axios";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const RecoveredItems = () => {
   const {user} = useContext(AuthContext);
   const [items, setItems] = useState([]);
-
-  console.log(user.email);
+  const axiosSecure = useAxiosSecure(); // custom hook for secure axios requests
 
   useEffect(() => {
     const fetchMyItems = async () => {
       if (user?.email) {
         try {
-          const {data} = await axios.get(
-            `${import.meta.env.VITE_API_URL}/allRecovered/${user.email}`
-          );
+          const {data} = await axiosSecure.get(`/allRecovered/${user.email}`);
           setItems(data);
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -23,8 +21,6 @@ const RecoveredItems = () => {
     };
     fetchMyItems();
   }, [user?.email]);
-
-  console.log(items);
 
   return (
     <div>

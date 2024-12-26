@@ -10,6 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import axios from "axios";
 
 //! for google sign in
 
@@ -21,8 +22,6 @@ const AuthProvider = ({children}) => {
   // user state
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  console.log(user);
 
   // Create new user
   const createNewUser = (email, password) => {
@@ -59,8 +58,27 @@ const AuthProvider = ({children}) => {
 
   // create observer for user {"To keep the user logged in, ensure that the user remains authenticated when the browser is refreshed by using an observer."}
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser?.email) {
+        setUser(currentUser);
+        //! Request JWT token from server post
+        const {data} = await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          {
+            email: currentUser?.email,
+          },
+          {withCredentials: true} //set credentials
+        );
+        console.log(data);
+      } else {
+        setUser(currentUser);
+        //! clear JWT token from server get
+        const {data} = await axios.get(
+          `${import.meta.env.VITE_API_URL}/logout`,
+          {withCredentials: true} //set credentials for jwt
+        );
+        console.log(data);
+      }
       setLoading(false);
     });
 

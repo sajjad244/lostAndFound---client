@@ -36,18 +36,22 @@ const Login = () => {
 
   // ! google login
 
-  const handleGoogleLogin = () => {
-    googleLogIn()
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-        navigate(location?.state || "/");
-        toast.success(`Welcome successfully logged in.`);
-      })
-      .catch((err) => {
-        toast.error(`Google Login Failed: ${err.message}`);
-      });
+  const handleGoogleLogin = async () => {
+    try {
+      //  Google login
+      const result = await googleLogIn();
+      const user = result.user;
+      setUser(user);
+
+      // Navigate and show success message
+      navigate(location?.state || "/");
+      toast.success(`Welcome successfully logged in.`);
+    } catch (err) {
+      // Handle errors
+      toast.error(`Google Login Failed: ${err.message}`);
+    }
   };
+
   return (
     <div>
       <div className="hero ">

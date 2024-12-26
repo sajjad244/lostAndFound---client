@@ -1,20 +1,24 @@
-import axios from "axios";
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import {useContext, useEffect, useState} from "react";
 import AuthContext from "../../Provider/AuthContext";
 import {FaArrowUpFromGroundWater, FaDeleteLeft} from "react-icons/fa6";
 import Swal from "sweetalert2";
 import {Link} from "react-router-dom";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const MyItemsPage = () => {
   const {user} = useContext(AuthContext);
   const [items, setItems] = useState([]);
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     const fetchMyItems = async () => {
       if (user?.email) {
         try {
-          const {data} = await axios.get(
-            `${import.meta.env.VITE_API_URL}/myItems/${user.email}`
+          const {data} = await axiosSecure.get(
+            `/myItems/${user.email}`
+            // {withCredentials: true} //set credentials for jwt
           );
           setItems(data);
         } catch (error) {
