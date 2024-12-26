@@ -16,7 +16,7 @@ WhereIsIt is a Lost and Found Website, a platform designed to connect individual
 ## Live Demo
 
 Check out the live version of the application:
-[WhereIsIt Live Demo](https://chatgpt.com/c/676c937b-192c-8003-a5fa-9c2c0404c0f1)
+[WhereIsIt Live Demo](https://.com/c/676c937b-192c-8003-a5fa-9c2c0404c0f1)
 
 ### Frontend
 
