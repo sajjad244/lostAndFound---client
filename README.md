@@ -37,3 +37,20 @@ Check out the live version of the application:
 
 - Lottie React for animations
 - LocalForage for local storage management
+
+## Running the Project Locally
+
+### Prerequisites
+
+- **Node.js** (v16 or later)
+- **npm** (Node Package Manager) or **yarn**
+
+### Steps to Run Locally
+
+1. **Clone the Repository**
+
+   First, clone your project repository:
+
+   ```bash
+   git clone https://github.com/your-username/WhereIsIt.git
+   ```
