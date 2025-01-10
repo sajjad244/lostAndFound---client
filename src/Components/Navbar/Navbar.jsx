@@ -36,7 +36,7 @@ const Navbar = () => {
   );
   return (
     <div className=" ">
-      <div className="navbar bg-base-100 flex justify-between">
+      <div className="navbar backdrop-blur-lg flex justify-between">
         {/*  */}
         <div className="flex items-center">
           <div className="text-3xl text-teal-500 font-bold">

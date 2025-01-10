@@ -32,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/allItems",
-        element: <AllLostFound></AllLostFound>,
+        element: (
+          <PrivetRoutes>
+            <AllLostFound></AllLostFound>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "/addLostAndFoundItem",
