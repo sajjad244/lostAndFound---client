@@ -48,11 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: (
-          <PrivetRoutes>
-            <LostFoundDetails></LostFoundDetails>
-          </PrivetRoutes>
-        ),
+        element: <LostFoundDetails></LostFoundDetails>,
         loader: () => fetch(`${import.meta.env.VITE_API_URL}/allItems`),
       },
       {
