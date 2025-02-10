@@ -6,7 +6,7 @@ import {Link, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const {createNewUser, setUser, updateUserProfile} = useContext(AuthContext);
+  const {createNewUser, setUser, updateUserProfile} = useContext(AuthContext); //lottie
   //? for navigate path
   const navigate = useNavigate();
 
