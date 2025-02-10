@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const MyItemsPage = () => {
-  const {user} = useContext(AuthContext);
+  const {user} = useContext(AuthContext); //my items page
   const [items, setItems] = useState([]);
   const axiosSecure = useAxiosSecure();
 
