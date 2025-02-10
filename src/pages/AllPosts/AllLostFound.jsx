@@ -5,7 +5,7 @@ import Card from "../../Components/Card";
 const AllLostFound = () => {
   const [items, setItems] = useState([]);
   const [search, setSearch] = useState("");
-  const [sortOrder, setSortOrder] = useState("asc"); // Default sort order
+  const [sortOrder, setSortOrder] = useState("asc"); // Default sort order {all lost and found items}
 
   useEffect(() => {
     const fetchAllItems = async () => {

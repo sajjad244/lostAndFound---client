@@ -6,6 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const LostFoundDetails = () => {
+  //details pAGE FOR LOST AND FOUND
   const data = useLoaderData();
   const {id} = useParams();
   const {user} = useContext(AuthContext);
