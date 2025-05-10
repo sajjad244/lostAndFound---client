@@ -90,7 +90,7 @@ const LostFoundDetails = () => {
       {/* conditional button & disabled with condition */}
       <button
         disabled={status === "Recovered"}
-        className="btn btn-primary mt-4"
+        className="btn btn-outline mt-4"
         onClick={() => setIsModalOpen(true)}
       >
         {PostType === "Lost" ? "Found This!" : "This is Mine!"}
