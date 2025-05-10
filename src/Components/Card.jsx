@@ -41,7 +41,7 @@ const Card = ({item}) => {
         </p>
         <p className="text-xs text-gray-500">{date}</p>
         <div className="card-actions justify-end">
-          <Link to={`/details/${_id}`} className="btn btn-primary btn-sm">
+          <Link to={`/details/${_id}`} className="btn btn-outline btn-sm">
             View Details
           </Link>
         </div>
