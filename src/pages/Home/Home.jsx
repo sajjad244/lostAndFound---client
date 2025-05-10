@@ -3,6 +3,7 @@ import HowItWorks from "../../Components/HowItWorks";
 import LostAndFound from "../../Components/LostAndFound";
 import SuccessStories from "../../Components/SuccessStories";
 import Banner from "./Banner";
+import FAQSection from "./FAQSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,8 @@ const Home = () => {
       {/* extra section */}
       <SuccessStories></SuccessStories>
       <HowItWorks></HowItWorks>
+      <FAQSection></FAQSection>
+
       {/* footer */}
       <Footer></Footer>
     </div>
