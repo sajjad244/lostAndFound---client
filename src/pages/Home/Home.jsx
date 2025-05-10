@@ -4,6 +4,7 @@ import LostAndFound from "../../Components/LostAndFound";
 import SuccessStories from "../../Components/SuccessStories";
 import Banner from "./Banner";
 import FAQSection from "./FAQSection";
+import NewsletterSection from "./NewsletterSection";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <SuccessStories></SuccessStories>
       <HowItWorks></HowItWorks>
       <FAQSection></FAQSection>
+      <NewsletterSection></NewsletterSection>
 
       {/* footer */}
       <Footer></Footer>

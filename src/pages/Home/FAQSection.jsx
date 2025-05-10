@@ -39,7 +39,7 @@ export default function FAQSection() {
           >
             <h3 className="font-semibold text-lg">{faq.question}</h3>
             {openIndex === index && (
-              <p className="mt-2 text-gray-600">{faq.answer}</p>
+              <p className="mt-2 text-gray-500">{faq.answer}</p>
             )}
           </div>
         ))}
