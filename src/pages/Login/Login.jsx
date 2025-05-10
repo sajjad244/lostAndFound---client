@@ -101,7 +101,7 @@ const Login = () => {
                 </button>
               </div>
               <div className="form-control ">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-outline">Login</button>
               </div>
             </form>
             {/* register */}
