@@ -155,7 +155,7 @@ const AddPostForm = () => {
         <div className="mb-4">
           <button
             type="submit"
-            className="w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-600"
+            className="w-full bg-slate-500 text-white p-2 rounded-md hover:bg-green-600"
           >
             Add Post
           </button>
