@@ -19,7 +19,7 @@ const LostAndFound = () => {
   return (
     <div className="mx auto">
       <div className="text-center my-16">
-        <h1 className="text-4xl font-bold text-teal-500">
+        <h1 className="text-2xl font-bold text-teal-500">
           {" "}
           <span className="text-orange-500">Current</span> Lost & Found{" "}
           <span className="italic font-thin bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
@@ -38,7 +38,7 @@ const LostAndFound = () => {
         ))}
       </div>
       <div className="my-5 px-8">
-        <Link to="/allItems" className="btn text-orange-500">
+        <Link to="/allItems" className="btn btn-sm btn-outline">
           See all
         </Link>
       </div>

@@ -31,7 +31,7 @@ const Card = ({item}) => {
             {title}
           </h2>
         </div>
-        <p className="badge text-sm font-serif  bg-orange-600">{status}</p>
+        <p className="badge text-sm  text-white  bg-orange-600">{status}</p>
 
         <p className="text-sm text-gray-600">
           <span className="font-medium">Category:</span> {PostType}
@@ -41,7 +41,7 @@ const Card = ({item}) => {
         </p>
         <p className="text-xs text-gray-500">{date}</p>
         <div className="card-actions justify-end">
-          <Link to={`/details/${_id}`} className="btn btn-outline btn-sm">
+          <Link to={`/details/${_id}`} className="btn btn-sm btn-outline   ">
             View Details
           </Link>
         </div>

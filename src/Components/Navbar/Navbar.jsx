@@ -22,13 +22,13 @@ const Navbar = () => {
   const links = (
     <>
       {/* privet-routes */}
-      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black">
+      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-orange-500">
         <NavLink to="/addLostAndFoundItem">Add Items</NavLink>
       </li>
-      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black">
+      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-orange-500">
         <NavLink to="/myItems">My Items</NavLink>
       </li>
-      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black">
+      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-orange-500">
         <NavLink to="/recoveredItems">Recovered Items</NavLink>
       </li>
       {/* <p className="p-2">{user?.displayName}</p> */}
@@ -59,7 +59,7 @@ const Navbar = () => {
               <li className="hidden md:block">
                 <NavLink
                   to="/"
-                  className="btn btn-ghost hover:text-black font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                  className="btn btn-ghost hover:text-orange-500 font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
                 >
                   Home
                 </NavLink>
@@ -67,7 +67,7 @@ const Navbar = () => {
               <li className="hidden md:block">
                 <NavLink
                   to="/allItems"
-                  className="btn btn-ghost hover:text-black font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                  className="btn btn-ghost hover:text-orange-500 font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
                 >
                   All Lost&Found
                 </NavLink>
@@ -113,7 +113,7 @@ const Navbar = () => {
               <div>
                 <Link
                   onClick={logout}
-                  className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black"
+                  className="btn btn-sm btn-ghost font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-orange-500"
                 >
                   Logout
                 </Link>
@@ -123,7 +123,7 @@ const Navbar = () => {
             <div className="flex gap-4 justify-center items-center">
               <Link
                 to="/login"
-                className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black"
+                className="btn btn-sm btn-ghost font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-orange-500"
               >
                 Login
               </Link>

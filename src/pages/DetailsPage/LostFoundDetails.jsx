@@ -75,8 +75,10 @@ const LostFoundDetails = () => {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold mb-2">{title}</h2>
         <div>
-          <p className="badge text-sm font-serif bg-purple-600">{PostType}</p>
-          <p className="badge text-sm font-serif ml-5 bg-orange-600">
+          <p className="badge text-sm font-serif bg-purple-600 text-white">
+            {PostType}
+          </p>
+          <p className="badge text-sm font-serif ml-5 bg-orange-600 text-white">
             {status}
           </p>
         </div>
