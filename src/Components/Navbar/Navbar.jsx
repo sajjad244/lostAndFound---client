@@ -22,13 +22,13 @@ const Navbar = () => {
   const links = (
     <>
       {/* privet-routes */}
-      <li>
-        <NavLink to="/addLostAndFoundItem">Add Lost & Found Item</NavLink>
+      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black">
+        <NavLink to="/addLostAndFoundItem">Add Items</NavLink>
       </li>
-      <li>
+      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black">
         <NavLink to="/myItems">My Items</NavLink>
       </li>
-      <li>
+      <li className="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black">
         <NavLink to="/recoveredItems">Recovered Items</NavLink>
       </li>
       {/* <p className="p-2">{user?.displayName}</p> */}
@@ -56,18 +56,18 @@ const Navbar = () => {
         <div>
           <div className="mr-4">
             <ul className="flex justify-center  text-sm font-semibold">
-              <li>
+              <li className="hidden md:block">
                 <NavLink
                   to="/"
-                  className="btn btn-ghost font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                  className="btn btn-ghost hover:text-black font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
                 >
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="hidden md:block">
                 <NavLink
                   to="/allItems"
-                  className="btn btn-ghost font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                  className="btn btn-ghost hover:text-black font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
                 >
                   All Lost&Found
                 </NavLink>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm font-semibold dropdown-content bg-base-100 rounded-box z-[20] mt-3 w-40 p-2 shadow space-y-2"
+                  className="menu menu-sm font-semibold dropdown-content bg-base-100 rounded-box z-[20] mt-3 w-40 p-2 shadow space-y-2 "
                 >
                   {links}
                 </ul>
@@ -113,7 +113,7 @@ const Navbar = () => {
               <div>
                 <Link
                   onClick={logout}
-                  className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                  className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black"
                 >
                   Logout
                 </Link>
@@ -123,16 +123,11 @@ const Navbar = () => {
             <div className="flex gap-4 justify-center items-center">
               <Link
                 to="/login"
-                className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
+                className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text hover:text-black"
               >
                 Login
               </Link>
-              <Link
-                to="/register"
-                className="btn font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text"
-              >
-                Register
-              </Link>
+              {/* ------ */}
             </div>
           )}
           {/* Theme toggle icon */}
