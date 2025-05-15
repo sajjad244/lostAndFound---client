@@ -95,7 +95,7 @@ const Login = () => {
                 <button
                   onClick={handleGoogleLogin}
                   type="button"
-                  className="w-full bg-green-500 hover:bg-red-600 text-white py-2 rounded-md focus:outline-none focus:ring focus:ring-red-300"
+                  className="w-full bg-green-500 btn btn-outline text-white py-2 rounded-md focus:outline-none focus:ring focus:ring-red-300"
                 >
                   Login with Google <FaGoogle className="inline-block ml-1" />
                 </button>
